@@ -8,7 +8,7 @@ namespace DataBase001.View
     {
         public static int MainMenu()
         {
-            Title(new System.Diagnostics.StackTrace(false).GetFrame(0).GetMethod().Name);
+            PrintTitle(new System.Diagnostics.StackTrace(false).GetFrame(0).GetMethod().Name);
             Console.WriteLine("Press:");
             Console.WriteLine("1 - Cities");
             Console.WriteLine("2 - Routes");
@@ -19,34 +19,25 @@ namespace DataBase001.View
                
         public static int MenuOfCityes(Model.Database DataBase)
         {
-            Column col = new Column();
-            
-            int col1 = 0;
-            int col2 = 3;
-            int col3 = 15;
-            int col4;
-            int col5;            
-            int FirstLineForData = 2;
+            TableSettings col = new TableSettings();
+            col.columnPosition.Add(0);
+            col.columnPosition.Add(3);
+            col.columnPosition.Add(15);
+            col.columnName.Add("#");
+            col.columnName.Add("CityName");
+            col.columnName.Add("Population");
 
-            Title(new System.Diagnostics.StackTrace(false).GetFrame(0).GetMethod().Name);
-
-            Console.SetCursorPosition(col1, FirstLineForData-1);
-            Console.Write("#");
-            Console.SetCursorPosition(col2, FirstLineForData - 1);
-            Console.Write("CityName");
-            Console.SetCursorPosition(col3, FirstLineForData - 1);
-            Console.Write("Population");
-
+            printHeadTible(col, new System.Diagnostics.StackTrace(false).GetFrame(0).GetMethod().Name);  
 
             for (int i = 0; i < DataBase.citys.Count; i++)
             {
-                Console.SetCursorPosition(col1, FirstLineForData + i);
+                Console.SetCursorPosition(col.columnPosition[0], col.FirstLineForData + i);
                 Console.Write(i + 1);
 
-                Console.SetCursorPosition(col2, FirstLineForData + i);
+                Console.SetCursorPosition(col.columnPosition[1], col.FirstLineForData + i);
                 Console.Write(DataBase.citys[i].name);
 
-                Console.SetCursorPosition(col3, FirstLineForData + i);
+                Console.SetCursorPosition(col.columnPosition[2], col.FirstLineForData + i);
                 Console.Write(DataBase.citys[i].population);
                 Console.WriteLine();
 
@@ -54,9 +45,16 @@ namespace DataBase001.View
 
             return Console.ReadKey().KeyChar - '0';
         }
-        static void printHeadTible(int col1,System.Diagnostics.StackFrame title,params string[] columnName)
+        static void printHeadTible(TableSettings dataPosition, string title)
         {
+            PrintTitle(title);
 
+            for (int i = 0; i < dataPosition.columnName.Count; i++)
+            {
+                Console.SetCursorPosition(dataPosition.columnPosition[i], dataPosition.FirstLineForData - 1);
+                Console.Write(dataPosition.columnName[i]);                
+            }
+            
         }
 
         static void Find()
@@ -64,7 +62,7 @@ namespace DataBase001.View
 
         }
 
-        static void Title(string title)
+        static void PrintTitle(string title)
         {
             Console.Clear();
             Console.SetCursorPosition(50, 0);

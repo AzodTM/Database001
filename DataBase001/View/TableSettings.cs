@@ -14,7 +14,7 @@ namespace DataBase001.View
         {
             columnPosition = new List<int>();
             columnName = new List<string>();
-            FirstLineForData = 2;
+            FirstLineForData = 4;
         }
     }
 }

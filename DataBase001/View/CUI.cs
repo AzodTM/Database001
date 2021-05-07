@@ -19,42 +19,15 @@ namespace DataBase001.View
                
         public static int MenuOfCityes(Model.Database DataBase)
         {
-            TableSettings col = new TableSettings();
-            col.columnPosition.Add(0);
-            col.columnPosition.Add(3);
-            col.columnPosition.Add(15);
-            col.columnName.Add("#");
-            col.columnName.Add("CityName");
-            col.columnName.Add("Population");
-
-            printHeadTible(col, new System.Diagnostics.StackTrace(false).GetFrame(0).GetMethod().Name);  
-
-            for (int i = 0; i < DataBase.citys.Count; i++)
-            {
-                Console.SetCursorPosition(col.columnPosition[0], col.FirstLineForData + i);
-                Console.Write(i + 1);
-
-                Console.SetCursorPosition(col.columnPosition[1], col.FirstLineForData + i);
-                Console.Write(DataBase.citys[i].name);
-
-                Console.SetCursorPosition(col.columnPosition[2], col.FirstLineForData + i);
-                Console.Write(DataBase.citys[i].population);
-                Console.WriteLine();
-
-            }
-
-            return Console.ReadKey().KeyChar - '0';
+            return ViewCityes.MenuOfCityes(DataBase);
         }
-        static void printHeadTible(TableSettings dataPosition, string title)
+        public static int MenuOfRotues(Model.Database DataBase)
         {
-            PrintTitle(title);
-
-            for (int i = 0; i < dataPosition.columnName.Count; i++)
-            {
-                Console.SetCursorPosition(dataPosition.columnPosition[i], dataPosition.FirstLineForData - 1);
-                Console.Write(dataPosition.columnName[i]);                
-            }
-            
+            return ViewRoutes.MenuOfRoutes(DataBase);
+        }
+        public static int MenuOfTrains(Model.Database DataBase)
+        {
+            return ViewTrains.MenuOfTrains(DataBase);
         }
 
         static void Find()
@@ -68,6 +41,7 @@ namespace DataBase001.View
             Console.SetCursorPosition(50, 0);
             Console.WriteLine(title);
         }
+
         public CUI()
         {
             //возможные стартовые настройки консоли

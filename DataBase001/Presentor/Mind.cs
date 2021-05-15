@@ -23,14 +23,17 @@ namespace DataBase001.Presentor
                         CUI.MenuOfCityes(myBase);                   
                         break;
                     case 2:
-                        Console.WriteLine("Temp case 2");
+                        CUI.MenuOfRotues(myBase);
                         break;
                     case 3:
-                        Console.WriteLine("Temp case 3");
+                        CUI.MenuOfTrains(myBase);
                         break;
-                    case 0:
-                        Console.WriteLine("Temp case 0");
-                        myBase = BaseTest();   
+                    case 0:                        
+                        myBase = BaseTest();
+                        Console.Clear();
+                        Console.WriteLine("Test base loaded");
+                        Console.WriteLine("Press any key to contine");
+                        Console.ReadKey();
                         break;
                 }
             }
@@ -55,11 +58,11 @@ namespace DataBase001.Presentor
             NewRoute("route02", db, "Moscow", "Paris", "Rome");
             NewRoute("route03", db, "Perm", "Moscow", "London");
 
-            db.trains.Add(new Train("train01,", db.routes[0].id));
-            db.trains.Add(new Train("train02,", db.routes[0].id));
-            db.trains.Add(new Train("train03,", db.routes[1].id));
-            db.trains.Add(new Train("train04,", db.routes[1].id));
-            db.trains.Add(new Train("train05,", db.routes[2].id));
+            db.trains.Add(new Train("train01", db.routes[0].id,1864));
+            db.trains.Add(new Train("train02", db.routes[0].id,1921));
+            db.trains.Add(new Train("train03", db.routes[1].id,1878));
+            db.trains.Add(new Train("train04", db.routes[1].id,1895));
+            db.trains.Add(new Train("train05", db.routes[2].id,1908));
 
 
             return db;

@@ -20,8 +20,8 @@ namespace DataBase001.View
         public static int MenuOfCityes(Model.Database DataBase)
         {
             Column col = new Column();
-            col.
-            int[] col = 0;
+            
+            int col1 = 0;
             int col2 = 3;
             int col3 = 15;
             int col4;

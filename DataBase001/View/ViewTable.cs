@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DataBase001.View
 {
-    public abstract class Table
+    public abstract class ViewTable
     {
         protected static void printHeadTible(TableSettings dataPosition, string title)
         {

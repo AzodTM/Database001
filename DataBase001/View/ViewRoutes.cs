@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DataBase001.View
 {
-    public class ViewRoutes : Table
+    public class ViewRoutes : ViewTable
     {
         public static int MenuOfRoutes(Model.Database DataBase)
         {

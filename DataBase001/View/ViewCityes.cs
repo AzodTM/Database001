@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DataBase001.View
 {
-    public class ViewCityes : Table
+    public class ViewCityes : ViewTable
     {
         public static int MenuOfCityes(Model.Database DataBase)
         {

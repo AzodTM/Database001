@@ -7,9 +7,9 @@ namespace DataBase001.Model
     
     public class Database
     {
-        public List<City> citys { set; get; }
-        public List<Route> routes { set; get; }
-        public List<Train> trains { set; get; }
+        public List<City> cities { private set; get; }
+        public List<Route> routes { private set; get; }
+        public List<Train> trains { private set; get; }
 
         public Database()
         {

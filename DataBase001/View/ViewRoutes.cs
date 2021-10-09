@@ -30,10 +30,13 @@ namespace DataBase001.View
                 Console.SetCursorPosition(table.columnPosition[2], table.FirstLineForData + i);
                 for (int j = 0; j < DataBase.routes[i].RoutOfSity.Count; j++)
                 {
+                    List<String> sityNameRoute = new List<string>();
                     for (int n = 0; n < DataBase.citys.Count; n++)
                     {
                         if(DataBase.routes[i].RoutOfSity[j] == DataBase.citys[n].id)
                         {
+
+                            sityNameRoute.Add(DataBase.citys[n].name);
                             Console.Write(DataBase.citys[n].name + "->");
                         }
                     }

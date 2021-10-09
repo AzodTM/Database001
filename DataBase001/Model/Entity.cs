@@ -7,12 +7,12 @@ namespace DataBase001.Model
     public abstract class Entity
     {
         public Guid id { get; }
-        public string name { set; get; }
+        
 
-        public Entity(string name)
+        public Entity()
         {
             id = Guid.NewGuid();
-            this.name = name;
+            
         }
             
 

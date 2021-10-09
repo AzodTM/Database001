@@ -11,6 +11,10 @@ namespace DataBase001.Presentor
     {
         Database myBase;
 
+
+        /// <summary>
+        /// 
+        /// </summary>
         public void Enter()
         {
             while (true)
